@@ -1,0 +1,106 @@
+<div class="topbar">
+  <img class="fl logo" src="./../assets/logo.png" alt="">
+  <span class="fl tit">{{type=='z'?'欢迎注册':'Please register'}}</span>
+  <div class="fr">{{type=='z'?'已有账号':'Already have an account'}}
+    <a href="javascript:;" class=" login" routerLink="/login">{{type=='z'?'请登录':'Please log in'}}</a>
+  </div>
+</div>
+<div class="registerbox">
+  <div class="conbox">
+    <div class="progress btn-group">
+      <div class="tip sure">
+        <span>1</span>
+      </div>
+      <span class="line btn"></span>
+      <div class="tip" [class]="step!=1?'sure':''">
+        <span>2</span>
+      </div>
+      <span class="line btn"></span>
+      <div class="tip" [class]="step!=2&&step!=1?'sure':''">
+        <span>3</span>
+      </div>
+      <span class="line btn"></span>
+      <div class="tip" [class]="step!=2&&step!=1&&step!=3?'sure':''">
+        <span>4</span>
+      </div>
+    </div>
+    <div class="contxt btn-group">
+      <div class="btn">{{type=='z'?'验证手机号':'Verify mobile phone number'}}</div>
+      <div class="btn"> {{type=='z'?'填写账号信息':'Enter account information'}}</div>
+      <div class="btn">{{type=='z'?'填写备注信息':'Enter personal data'}}
+      </div>
+      <div class="btn">{{type=='z'?'注册成功':'Registered successfully'}}</div>
+    </div>
+    <!-- 第1块 -->
+    <div class="box" *ngIf="step==1">
+      <p class="tit">{{type=='z'?'请通过手机号注册':'Please register with your mobile phone number '}}</p>
+      <div class="line mobile">
+        <span>{{type=='z'?'中国':'china'}}+86</span>
+        <input type="text" placeholder="{{type=='z'?'请填写常用手机号':'Please enter your usual mobile phone number'}}"
+          [(ngModel)]="form.mobile">
+      </div>
+      <div class="line">
+        <input type="text" placeholder="{{type=='z'?'输入图形验证码':'Enter the graphic verification code'}}"
+          [(ngModel)]="form.txyzm">
+        <div id="verificationCode" class="verificationCode">
+          <canvas width="100" height="40" id="verifyCanvas"></canvas>
+          <img id="code_img">
+        </div>
+      </div>
+      <div class="line">
+        <input type="text" placeholder="{{type=='z'?'输入验证码':'Please enter the verification code'}}"
+          [(ngModel)]="form.dxyzm">
+        <a href="javascript:;" class="getyzm">{{type=='z'?'获取验证码':'Get verification code'}}</a>
+      </div>
+      <p class="checkline">
+        <input type="checkbox" checked readonly>{{type=='z'?'我已阅读并同意':'I have read and agree to'}}<a
+          href="">{{type=='z'?'《上马网用户注册协议》':'Shangma.com User Registration Agreement'}}</a>
+      </p>
+      <a href="javascript:;" class="next" (click)="next(2)">{{type=='z'?'下一步':'Next step'}}</a>
+    </div>
+    <!-- 第2块 -->
+    <div class="box" *ngIf="step==2">
+      <p class="tit">{{type=='z'?'填写账号信息':'Fill in the account information'}}</p>
+      <p class="desc">{{type=='z'?'昵称':'name'}}</p>
+      <div class="line name">
+        <input type="text" placeholder="{{type=='z'?'请输入昵称':'enter your name'}}" [(ngModel)]="form.name">
+      </div>
+      <p class="desc">第一次输入密码</p>
+      <div class="line password">
+        <input type="password" required placeholder="{{type=='z'?'请输入密码':'enter your password'}}" [(ngModel)]="form.pwd">
+      </div>
+      <p class="desc">第二次输入密码</p>
+      <div class="line password">
+        <input type="password" required placeholder="{{type=='z'?'请再次输入密码':'Please enter your password again'}}"
+          [(ngModel)]="form.surepwd">
+      </div>
+      <a href="javascript:;" class="next" (click)="submit()">{{type=='z'?'立即注册':'Register'}}</a>
+      <br>
+      <a href="javascript:;" class="next" (click)="next(3)">下一步</a>
+    </div>
+    <!-- 第3块 -->
+    <div class="box" *ngIf="step==3">
+      <p class="tit">{{type=='z'?'填写备注信息':'Fill in the other information'}}</p>
+      <div class="other">
+        <textarea placeholder="{{type=='z'?'如果有其他信息想要备注，请填写在这里(可不填)':'if you have other infomations you want to provide,write in here'}}" [(ngModel)]="form.otherInfo"> </textarea>
+      </div>
+      <a href="javascript:;" class="next" (click)="next(4)">{{type=='z'?'下一步':'Next step'}}</a>
+    </div>
+    <!-- 第4块 -->
+    <div class="box" *ngIf="step==4">
+      <p class="success">{{type=='z'?'注册成功，5秒后跳转进登陆页':'Resgiste done!'}}</p>
+      <a href="javascript:;" class="next" routerLink="/login">{{type=='z'?'跳转登录':'Login'}}</a>
+    </div>
+  </div>
+</div>
+<footer>
+  <p class="line"><a href="javascript:;" (click)="changetxt('z')">中文</a>
+    <a href="javascript:;" (click)="changetxt('e')">English</a>
+    <a href="">日本語</a>
+    <a href="">Français</a>
+  </p>
+  <p class="line">© Copyright 2020 Organizing Committee of Shanghai Marathon
+    沪公网安备 31010402008654号
+    沪ICP备17043220号-3
+  </p>
+</footer>

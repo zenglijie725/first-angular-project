@@ -1,0 +1,310 @@
+/* You can add global styles to this file, and also import other style files */
+#loginbox {
+  background: transparent url('/assets/login.jpg') no-repeat top fixed;
+  background-size: cover;
+  width: 100vw;
+  height: calc(100vh - 90px);
+  position: fixed;
+}
+#loginbox .mainbox {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  z-index: 98999;
+  max-width: 600px;
+  width: 90%;
+  display: block;
+  margin: 60px auto;
+}
+#loginbox .mainbox h1 {
+  text-align: left;
+  font-size: 30px;
+  line-height: 42px;
+  color: #fff;
+  padding-left: 15px;
+}
+#loginbox .mainbox h1 img {
+  margin-left: -180px;
+  margin-right: 30px;
+}
+#loginbox .mainbox input {
+  margin: 30px 0;
+  font-size: 18px;
+  line-height: 40px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 2px solid #fff;
+  width: 100%;
+  padding-left: 30px;
+  box-sizing: border-box;
+}
+#loginbox .mainbox .login {
+  color: #fff;
+  background-color: #d83838;
+  border-color: #d83838;
+  font-size: 18px;
+  line-height: 40px;
+  height: 40px;
+  display: inline-block;
+  min-width: 180px;
+  border-radius: 6px;
+}
+#loginbox .mainbox .register {
+  float: right;
+  color: #fff;
+  font-size: 18px;
+  line-height: 40px;
+  width: 180px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+}
+#loginbox .mainbox input::placeholder {
+  color: #fff;
+}
+#loginbox .mainbox .forgetline {
+  padding-top: 10px;
+}
+#loginbox .mainbox .forget {
+  float: left;
+  color: #fff;
+  font-size: 14px;
+  text-align: left;
+}
+#loginbox::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(74, 74, 74, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+footer {
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+footer p,
+footer a {
+  color: #333;
+  font-size: 12px;
+  line-height: 30px;
+}
+footer a {
+  margin: 0 10px;
+}
+@media screen and (max-width: 650px) {
+  #loginbox .mainbox h1 img {
+    margin-left: 0;
+  }
+  #loginbox .mainbox .login,
+  #loginbox .mainbox .register {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+/* 注册页面 */
+.topbar {
+  max-width: 900px;
+  margin: auto;
+  width: 90%;
+  padding: 10px 0;
+}
+.topbar .logo {
+  display: inline-block;
+  vertical-align: middle;
+}
+.topbar .tit {
+  padding-left: 30px;
+  border-left: 1px solid #ccc;
+  color: #666;
+  font-size: 24px;
+  margin-left: 30px;
+  line-height: 60px;
+}
+.topbar .fr {
+  font-size: 18px;
+  line-height: 40px;
+}
+.topbar .fr a {
+  font-size: 18px;
+  line-height: 40px;
+  display: inline-block;
+  border-radius: 20px;
+  border: 1px solid #4a90e2;
+  min-width: 90px;
+  color: #4a90e2;
+  border-color: #4a90e2;
+}
+.registerbox {
+  overflow: auto;
+  position: fixed;
+  left: 0;
+  bottom: 80px;
+  width: 100%;
+  top: 73px;
+  background: transparent url('/assets/bj.png') no-repeat top fixed;
+  background-size: cover;
+}
+.registerbox .conbox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+}
+.registerbox .progress {
+  text-align: center;
+  align-items: center;
+  text-align: justify;
+  margin: 0 50px;
+}
+.registerbox .progress .line {
+  border: 1px solid #ccc;
+  height: 1px;
+  background-color: #ccc;
+}
+.registerbox .progress .tip.sure span {
+  border: 1px solid #ac2424;
+  color: #ac2424;
+}
+.registerbox .progress .contxt .btn.sure {
+  color: #ac2424;
+}
+.registerbox .progress .tip {
+  vertical-align: middle;
+  display: inline-block;
+}
+.registerbox .progress .tip span {
+  line-height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  color: #ccc;
+  text-align: center;
+  display: block;
+}
+.registerbox .contxt .btn {
+  text-align: center;
+  color: #333;
+  font-size: 14px;
+  line-height: 40px;
+}
+.registerbox .contxt .btn.sure {
+  color: #ac2424;
+  font-weight: bold;
+}
+.registerbox .box {
+  padding: 30px 0;
+  width: 80%;
+  margin: auto;
+}
+.registerbox .box .tit {
+  text-align: left;
+  border-left: 2px solid #ac2424;
+  font-size: 18px;
+  line-height: 30px;
+  padding-left: 20px;
+  color: #333;
+}
+.registerbox .box .mobile {
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.registerbox .box .mobile input {
+  margin-left: 10px;
+}
+.registerbox .box .desc {
+  font-size: 14px;
+  line-height: 40px;
+  text-align: left;
+  color: #666;
+}
+.registerbox .box .line {
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: nowrap;
+}
+.registerbox .box .line span {
+  color: #333;
+  font-size: 14px;
+  display: inline-block;
+  width: 80px;
+  text-align: center;
+  line-height: 40px;
+}
+.registerbox .box .line input {
+  border: 1px solid #fff;
+  font-size: 16px;
+  line-height: 40px;
+  padding-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+.registerbox .box .line .getyzm {
+  border: 1px solid #4a90e2;
+  font-size: 14px;
+  display: inline-block;
+  border-radius: 6px;
+  background-color: #fff;
+  line-height: 40px;
+  color: #4a90e2;
+}
+.registerbox .box .checkline {
+  font-size: 14px;
+  line-height: 40px;
+  color: #333;
+  text-align: left;
+}
+.registerbox .box .checkline input {
+  margin-right: 10px;
+}
+.registerbox .box .checkline a {
+  color: #4a90e2;
+}
+.registerbox .next {
+  color: #fff;
+  background-color: #d83838;
+  border-color: #d83838;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  border-radius: 6px;
+}
+@media screen and (max-width: 640px) {
+  .registerbox {
+    position: inherit;
+  }
+  .registerbox .progress {
+    margin: 0;
+  }
+  .registerbox .conbox {
+    position: inherit;
+    transform: none;
+  }
+  footer {
+    position: inherit;
+  }
+  .registerbox .box .line {
+    flex-wrap: wrap;
+  }
+  .registerbox .box .line input {
+    width: 100%;
+  }
+}

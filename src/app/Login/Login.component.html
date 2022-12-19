@@ -1,0 +1,27 @@
+<div id="loginbox">
+  <div class="mainbox">
+    <h1>
+      <img class="logo" src="./../../assets/logo-w.png" alt="">
+      | {{type=='z'?'欢迎登录':'Thank you for login'}}
+    </h1>
+    <input type="text" [(ngModel)]="form.username" placeholder="{{type=='z'?'邮箱/手机号':'Email/mobile phone number'}}">
+    <input type="text" [(ngModel)]="form.password" placeholder="{{type=='z'?'密码':'Password'}}">
+    <div class="btnline fn-clear">
+      <a href="javascript:;" class="login" (click)="submit()">{{type=='z'?'登录':'Login'}}</a>
+      <a href="javascript:;" class="register" routerLink="/register">{{type=='z'?'注册':'Register'}}</a>
+    </div>
+    <p class="fn-clear forgetline"><a href="javascript:;" (click)="alertdata()"
+        class="forget">{{type=='z'?'忘记密码':'Forget password?'}}</a></p>
+  </div>
+</div>
+<footer>
+  <p class="line"><a href="javascript:;" (click)="changetxt('z')">中文</a>
+    <a href="javascript:;" (click)="changetxt('e')">English</a>
+    <a href="">日本語</a>
+    <a href="">Français</a>
+  </p>
+  <p class="line">© Copyright 2020 Organizing Committee of Shanghai Marathon
+    沪公网安备 31010402008654号
+    沪ICP备17043220号-3
+  </p>
+</footer>
