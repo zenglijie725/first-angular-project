@@ -31,6 +31,4 @@ To get more help on the Angular CLI use `ng help us` or go check out the [Angula
 
 try to find the conflicts will append in where.
 
-## Commit 
-
-commit1
+## testCode
